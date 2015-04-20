@@ -1,0 +1,515 @@
+@font-face {
+	font-family: "Kendo UI";
+	src: url("http://cdn.kendostatic.com/2013.3.1030/styles/images/kendoui.woff") format("woff"), url("http://cdn.kendostatic.com/2013.3.1030/styles/images/kendoui.ttf") format("truetype");
+}
+
+body:before {
+	font-family: "Kendo UI";
+	content: "\a0";
+	width: 0;
+	height: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+}
+
+.km-content p,
+.km-content h1,
+.km-content h2,
+.km-content h3,
+.km-content h4,
+.km-content h5,
+.km-content h6 {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.km-content h4 {
+	margin-top: 0;
+}
+
+dl,
+dd,
+dt {
+	margin: 0
+}
+
+#home_views h2 {font-weight: normal}
+
+.mail-text p:empty {
+	display: none
+}
+
+.mail-text p {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.km-ios7 .km-button.reply {}
+
+.text-right {
+	text-align: right
+}
+
+#inbox_actionBar {
+	display: none
+}
+
+.allowActions #inbox_actionBar {
+	display: block
+}
+
+.allowActions .reply {
+	display: none
+}
+
+div[data-unread="false"] h5,
+div[data-unread="false"] h4 {
+	font-weight: normal
+}
+#mailCount {text-align: right}
+span[data-text="mails"] {display: block; font-size: 0.8em}
+#mailCount.fa-spinner > span {
+	display: none
+}
+
+.mailList li {
+	/*height:2em*/
+}
+
+/*.mailList dl {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.mailList dd {
+	display: table-cell;
+	width: 100%;
+	vertical-align: top;
+}
+
+.mailList dt {
+	display: none;
+	min-width: 2rem;
+	padding: 20px 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mailList dt:before {
+	content: "\f096";
+}
+
+.mailList .k-state-selected dt:before {
+	content: "\f046";
+}*/
+.mailList li > p:before,
+.mailList li > p:after,
+.mailList li > dl:before,
+.mailList li > dl:after {
+    content: " ";
+    display: table;
+}
+.mailList li > dl, .mailList li > div {
+	clear: both;
+	font-size:0.8em;
+}
+.mailList li > dl {
+	/*height:4.5rem*/
+}
+.mailList li > dl dt {
+	float:left;
+	max-width: 75%;
+	overflow: hidden;
+}
+.mailList li > dl dd {
+	float:right
+}
+
+.mailList h2, .mailList h4, .mailList h3 {position: relative; padding-right:100px}
+.mailList h2 p, .mailList h4 p, .mailList h3 p {position:absolute; right:0; top:0; width:124px; font-size:smaller; font-weight: normal}
+
+.km-content h2 {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size:1.15em;
+}
+.km-content h3 {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size:1em;
+}
+.km-content h4 {
+	opacity: 0.8;
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.mailList p {
+	margin: 0;
+	padding: 0;
+	text-align: right
+}
+/*.mailList h2 em:before {
+	content: '<'
+}
+
+.mailList h2 em:after {
+	content: '>'
+}*/
+
+.mailList h5 {
+	font-weight: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width:90%;
+	overflow: hidden
+}
+
+.mailList span[data-importance="1"]:before {
+	content: "! ";
+	color: red
+}
+/*.mailList i:before {content: ' - '}*/
+
+.mailList .field_date {
+	font-size: 0.7rem
+}
+
+
+ul {
+	list-style-type: none;
+	margin: 0; padding:0
+}
+
+span[data-attachments] {
+	cursor: pointer;
+	font-weight: bold
+}
+
+span[data-attachments]:before {
+	content: "\f0c6"
+}
+
+span[data-attachments="false"] {
+	display: none
+}
+
+small {
+	display: inline-block;
+}
+.mailList i {display:block; height: 1px}
+small:empty {
+	visibility: hidden
+}
+.mailList li > p {
+	
+}
+mark {
+	background: none;
+	border: 1px solid;
+	font-size: 0.8rem;
+	padding: 0.2rem; margin:1px 3px;
+}
+
+mark:empty {
+	visibility: hidden
+}
+/* detail */
+.km-group-title .km-text {
+	
+}
+.k-state-focused dl.person {font-size:0.8 !important}
+
+.person dt,
+.person dd {
+	display: inline-block;
+	padding: 0
+}
+
+.person {
+	white-space: nowrap;
+	overflow: hidden
+}
+.mail_header .person {
+	padding-right:5px;
+}
+.mailDetail.categories li {
+	display: inline-block;
+	padding: 0.2rem;
+	border: 0;
+	background: transparent
+}
+.mail_header {
+	overflow: hidden;
+	white-space: normal;
+	
+}
+.mail_header > span:first-child {display: inline-block}
+.mail_header dl.person {
+	display:inline-block; padding-right:5px
+}
+
+.km-ios7 .km-list>li.mail_header *{
+	font-size:1.0em;
+	border-width:0 !important;
+	padding:0
+	
+}
+	.km-ios7 .km-list>li.mail_header li {padding:0 5px}
+
+.mailDetail_body {
+	overflow-x: scroll;
+}
+
+.sender_address {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0;
+}
+
+.sender_address:before {
+	content: '<'
+}
+
+.sender_address:after {
+	content: '>'
+}
+
+#create_from .k-dropdown-wrap > span:first-child:before {
+	content: 'Send as: ';
+	opacity: 0.7
+}
+
+.form-group #createMessageWrap .k-widget {
+	width: auto
+}
+
+.to_list li {
+	display: inline-block;
+	padding-right: 0;
+}
+
+.to_list li dl:after {
+	content: ''
+}
+
+.to_list .km-listview-wrapper,
+.to_list .km-list,
+.to_list .km-listview {
+	display: inline
+}
+
+.km-list.to_list li > li,
+.km-list>li li {
+	padding: 0 0 0 0.1rem;
+}
+
+#newMail form > .row {
+	margin: 0.25rem 0;
+}
+
+.km-root .appearance .km-listview label {
+	width: 100%;
+}
+
+.km-wp .appearance .km-listview label {
+	color: #999;
+}
+
+.km-root .km-pane .km-view.appearance .km-listview input,
+.km-root .km-pane .km-view.appearance .km-listview textarea,
+.km-root .km-pane .km-view.appearance .km-listview .k-dropdown,
+.km-root .km-pane .km-view.appearance .km-listview .km-list {
+	position: relative;
+	width: 100%;
+	right: 0;
+	margin-top: 0;
+	top: 0;
+}
+
+.km-root .km-pane .km-view.appearance .km-listview label{
+	width: 10%;
+}
+
+.km-root .km-pane .km-view.appearance .km-listview input.class70,
+.km-root .km-pane .fullWidthInputs.km-listview input.class70{
+	width: 70%;
+}
+
+.km-root .km-pane .km-view.appearance .km-listview input.class80,
+.km-root .km-pane .fullWidthInputs.km-listview input.class80{
+	width: 80%;
+}
+
+.km-root .km-pane .km-view.appearance .km-listview input.class90,
+.km-root .km-pane .fullWidthInputs.km-listview input.class90{
+	width: 90%;
+}
+
+.km-root .km-pane .km-view.appearance .km-listview textarea {
+	box-sizing: padding-box
+}
+
+.km-root .km-wp .km-view.appearance .km-listview input {
+	margin-top: .2em;
+}
+
+.km-root .km-ios .km-view.appearance .km-listview input,
+.km-root .km-ios7 .km-view.appearance .km-listview input {
+	padding: .4em 0;
+}
+
+#newMail ul li:last-child {
+	/*min-height: 200px*/
+}
+.disableEvents * {pointer-events: none}
+#create_message,
+textarea#create_message {
+	height: 100%;
+	min-height: 200px;
+	padding: 0;
+	box-sizing: content-box;
+	float: none;
+	margin: 0
+}
+
+[data-ready-to-send=false] footer a {
+	opacity: 0.8;
+	pointer-events: none
+}
+
+.fullWidthInputs.km-listview label {
+	width: 100%;
+}
+
+.km-wp .fullWidthInputs.km-listview label {
+	color: #999;
+}
+
+.km-root .km-pane .fullWidthInputs.km-listview input,
+.km-root .km-pane .fullWidthInputs.km-listview button_,
+.km-root .km-pane .fullWidthInputs.km-listview .k-dropdown,
+.km-root .km-pane .fullWidthInputs.km-listview .km-list {
+	position: relative;
+	width: 100%;
+	right: 0;
+	margin-top: 0;
+	top: 0;
+}
+
+.km-root .km-pane .fullWidthInputs.km-listview .autoWidth input,
+.km-root .km-pane .fullWidthInputs.km-listview .autoWidth .k-dropdown,
+.km-root .km-pane .fullWidthInputs.km-listview .autoWidth .km-list {
+	
+}
+.autoWidth label {width:auto; display:block; padding-right:45px; position: relative}
+.autoWidth label button {position: absolute;right:0; top:0}
+.autoWidth label input {width:100%}
+
+.km-root .km-wp .fullWidthInputs.km-listview input {
+	margin-top: .2em;
+}
+
+.km-root .km-ios .fullWidthInputs.km-listview input,
+.km-root .km-ios7 .fullWidthInputs.km-listview input {
+	padding: .4em 0;
+}
+
+.km-list > li.no-padding,
+.km-ios7 .km-list>li.no-padding {
+	padding: 0
+}
+
+.km-android4 .km-listview-wrapper {
+	padding: 0
+}
+
+#Search .km-group-title {
+	display: none
+}
+
+#Search .km-group-title {display:none}
+#Search .keywords ul.km-list li {display:inline-block}
+.toFromWrapper .k-widget{display: none;}
+#search_keywords select {width:40%; display:inline-block}
+.stretchToWidth {width:85%;}
+/*div[data-role="modalview"] {width:90%}*/
+.k-multiselect .k-delete {display: none}
+.k-multiselect .k-button {padding:0 5px}
+span > small {display: none}
+.categories mark, .persons > span {margin-right:5px}
+
+#login h1 {text-align: center; margin:2em 0 0;}
+#login h2 {text-align: right; width:80%; margin:0 auto 2em; font-size:1.2em; opacity:0.8; color: #c0b10f}
+#login h1 img {width:80%; height: auto;}
+#login input[type="checkbox"] {width:auto}
+
+.km-ios7 #login .km-list>li:last-child {box-shadow: none}
+
+.km-ios7 .km-popup .k-item, .km-ios7 .km-actionsheet>li>a {
+	font-size:1.0em
+}
+
+
+.km-ios7 .k-list, .km-ios7 .k-slider, .km-ios7 .km-widget {
+	 color: rgb(1, 97, 105);
+}
+
+.km-ios7 .km-view .km-navbar .km-view-title > * .km-button.km-state-active {
+    background-color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-navbar .km-view-title > * .km-button .km-text {
+    color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-navbar .km-view-title > * .km-button.km-state-active .km-text {
+    color: rgb(255, 255, 255);
+}
+.km-ios7 .km-view .km-tabstrip .km-state-active span.km-icon {
+    color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-tabstrip .km-button.km-state-active .km-text {
+    color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-navbar .km-button .km-text {
+    color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-content .km-button.km-state-active {
+    background-color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-content .km-button .km-text {
+    color: rgb(1, 97, 105);
+}
+.km-ios7 .km-view .km-content .km-button.km-state-active .km-text {
+    color: rgb(255, 255, 255);
+}
+
+.listItems {margin:0; padding: 0; box-shadow:none}
+.km-list.listItems li {padding:3px; border: 0; box-shadow:none !important; display:inline-block;}
+.km-list.listItems li span {font-size:smaller;}
+
+.autoWidth .km-listview-wrapper {}
+
+input[type="date"]:before {
+	content: attr(placeholder);
+	color: #aaa;
+}
+
+input[type="date"]:focus:before, input[type="date"]:valid:before {
+	content: "";
+}

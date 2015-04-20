@@ -1,0 +1,57 @@
+<div data-role="view" data-layout="layout" data-bind="events: { init: onViewInit, show: onViewShow }" data-title="eMail" data-model="FK.email.model" id="view_mailDetail">
+	<header data-role="header">
+		<div data-role="navbar">
+			<a data-align="left" data-icon="arrow-w" data-role="backbutton" class="back-button"></a>
+			<span data-role="view-title"></span>
+			<a data-role="button" data-align="right" data-icon="home" href='views/home.html'></a>
+		</div>
+	</header>
+
+	<div class="km-group-title">
+		<div class="km-text" data-bind="text: observable.subject"></div>
+	</div>
+
+	<ul data-role="listview">
+		<li class="mail_header">
+			<span data-text="From">: <span data-bind="html: observable.sender"></span></span>
+		</li>
+		<li class="mail_header">
+			<span data-text="To">: <span data-bind="html: observable.to" class="persons"></span></span>
+		</li>
+		
+		<li class="mail_header">
+			<span data-text="CC">: <span data-bind="html: observable.cc" class="persons"></span></span>
+		</li>
+        
+        <li class="mail_header">
+			<span data-text="Sent">: <span data-bind="html: observable.sent" class="persons"></span></span>
+		</li>
+		
+		<li>
+			<span data-bind="html: observable.categories" class="categories"></span>
+		</li>
+		<li class="mailDetail_body">
+			<div data-bind="html: observable.body"></div>
+		</li>
+	</ul>
+
+	<footer data-role="footer">
+		<div data-role="tabstrip">
+			<a data-role="button" data-icon="compose" href="views/create.html">Create</a>
+			<a data-role="button" data-icon="search" href="views/search.html">Search</a>
+			<a data-role="button" data-icon="reply" data-bind="events: {click: reply}">Reply</a>
+			<a data-role="button" data-icon="reply" data-bind="click: replyAll">Reply all</a>
+		</div>
+	</footer>
+
+</div>
+<script id="to-template" type="text/x-kendo-template">
+	<dl class="person">
+		<dt><span class="sender_name" data-bind="text: name"></span></dt>
+		
+	</dl>
+</script>
+<script id="categories-template" type="text/x-kendo-template">
+	<mark data-bind="text: name"></mark>
+</script>
+<!--<dd><span class="sender_address" data-bind="text: address"></span></dd>-->

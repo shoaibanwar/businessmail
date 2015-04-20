@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<!--<link rel="icon" type="image/png" href="assets/img/" />-->
+	<link rel="stylesheet" type="text/css" href="vendor/css/kendo.common.min.css" />
+	<link rel="stylesheet" type="text/css" href="vendor/css/kendo.default.min.css" />
+	<link rel="stylesheet" type="text/css" href="vendor/css/kendo.mobile.all.min.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="vendor/css/normalize.css" />
+	<link rel="stylesheet" href="vendor/css/foundation.min.css" />-->
+	<link rel="stylesheet" href="assets/css/app.css" />
+	
+	
+	<style id="translations"></style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+
+	<!--<style>
+	html, body {min-height:100%}
+	</style>-->
+</head>
+
+<body lang="en">
+	<div data-role="layout" data-id="layout" data-platform="ios">
+		<header data-role="header">
+			<div data-role="navbar">
+				<a data-align="left" data-icon="arrow-w" data-role="backbutton" class="back-button"></a>
+				<span data-role="view-title"></span>
+			</div>
+		</header>
+	</div>
+	<div data-role="layout" data-id="layout" data-platform="android">
+		<header data-role="header">
+			<div data-role="navbar">
+				<a data-align="left" data-icon="arrow-w" data-role="backbutton" class="back-button"></a>
+				<span data-role="view-title"></span>
+			</div>
+		</header>
+		<footer data-role="footer">
+			<div data-role="navbar">
+				<a data-align="left" data-icon="arrow-w" data-role="backbutton" class="back-button"></a>
+				<span data-role="view-title"></span>
+			</div>
+		</footer>
+	</div>
+	<style scoped>
+		#layoutView .km-view-title {
+			visibility: inherit;
+		}
+		.km-android #layoutView .km-view-title {
+			display: block;
+			position: static;
+		}
+	</style>
+	
+	<div data-role="view" id="index" data-bind="events: { init: onViewInit}" data-model="FK.index.model">
+	</div>
+	<span id="popupNotification"></span>
+	<span id="notification"></span>
+<script type="text/x-kendo-template" id="sender-template">
+	#: name # <span>&lt;#: address #&gt;</span>
+</script>
+	
+	
+	<!--data-role="button" data-rel="modalview"-->
+	
+
+	<script src="vendor/js/jquery.min.js"></script>
+	<script src="vendor/js/kendo.all.min.js"></script>
+	<script src="vendor/js/cultures/kendo.culture.en-GB.min.js"></script>
+	<script src="vendor/js/cultures/kendo.culture.da-DK.min.js"></script>
+	<script src="vendor/js/jquery.cookie.js"></script>
+	<script src="vendor/js/moment-with-locales.js"></script>
+	<script src="vendor/js/jstz-1.0.4.min.js"></script>
+	
+	<script src="assets/js/paths.js"></script>
+	<script src="assets/js/settings.js"></script>
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/language.js"></script>
+	
+	<script src="assets/js/inbox.js"></script>
+	<script src="assets/js/mail.js"></script>
+	<script src="assets/js/create.js"></script>
+	<script src="assets/js/search.js"></script>
+    <script src="assets/js/searchlist.js"></script>
+	<script src="assets/js/home.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/index.js"></script>
+
+	<script src="assets/js/layout.js"></script>
+	<script src="assets/js/router.js"></script>
+	<script>
+		FK.App.init();        
+	</script>
+</body>
+
+</html>

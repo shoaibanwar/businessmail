@@ -1,0 +1,52 @@
+<div class="appearance" data-role="view" id="newMail" data-title="New mail" data-layout="layout" data-bind="events: { init: onViewInit, show: onViewShow }" data-model="FK.create.model" data-use-native-scrolling="true" data-ready-to-send="true">
+	<form>
+		<ul data-role="listview">
+			<li id="create_from">
+				<input type="submit" value="Send" data-role="button" data-bind="events: {click: readyToSend}"><select data-role="dropdownlist" data-bind="source: accounts, value: from" data-template="to-template" data-text-field="name" data-value-field="address" data-value-primitive="true"></select>
+			</li>
+			<li>
+                <label>To: </label>
+				<input class="class90" type="email" id="create_to" data-bind="value: to.to" placeholder="To" required validationMessage="required" />
+			<li>
+                <label>Cc: </label>
+				<input class="class90" type="email" id="create_cc" data-bind="value: to.cc" placeholder="Cc" />
+			</li>
+			<li>
+                <label>Bcc: </label>
+				<input class="class90" type="email" id="create_bcc" data-bind="value: to.bcc" placeholder="Bcc" />
+			</li>
+			<li>
+                <label>Subject: </label>
+				<input class="class80" type="text" id="create_subject" data-bind="value: subject" placeholder="Subject" />
+			</li>
+			<li>
+				<textarea id="create_message" data-bind="value: body"></textarea>
+			</li>
+			<li>
+				<input type="submit" value="Send" data-role="button" id="send_mail" data-bind="events: {click: readyToSend}">
+			</li>
+		</ul>
+	</form>
+	<footer data-role="footer">
+        <div data-role="tabstrip">
+            <a data-role="button" data-icon="home" href='views/home.html'>Views</a>
+            <a data-role="button" data-icon="compose" href="views/create.html">Create</a>
+            <a data-role="button" data-icon="search" href="views/search.html">Search</a>
+        </div>
+    </footer>
+
+
+</div>
+
+
+<script type="text/x-kendo-template" id="sender-template">
+	#: name # <span>&lt;#: address #&gt;</span>
+</script>
+
+<script id="to-template" type="text/x-kendo-template">
+	<dl class="person">
+		<dt><span class="sender_name" data-bind="text: name"></span></dt>
+		<dd><span class="sender_address" data-bind="text: address"></span>
+		</dd>
+	</dl>
+</script>

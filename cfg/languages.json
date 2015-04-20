@@ -1,0 +1,20 @@
+{
+	"languages": {
+		"default":"en",
+		"language": [
+			{
+				"name": "English",
+				"code": "en",
+				"lang": "en",
+				"culture": "en-GB",
+				"firstWorkingDay":1
+			},
+			{
+				"name": "Danish",
+				"code": "da",
+				"lang": "da",
+				"culture": "da-DK"
+			}
+		]
+	}
+}

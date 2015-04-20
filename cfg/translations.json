@@ -1,0 +1,46 @@
+{
+	"Inbox":{
+		"en":"Inbox",
+		"da":""
+	},
+	"Reply all":{
+		"en":"Reply all!",
+		"da":"Re all"
+	},
+	"Search":{
+		"en":"Search",
+		"da":""
+	},
+	"Stop":{
+		"en":"Stop",
+		"da":""
+	},
+	"Reset":{
+		"en":"Reset",
+		"da":""
+	},
+	"mails":{
+		"en":"mails",
+		"da":""
+	},
+	"From":{
+		"en":"From",
+		"da":""
+	},
+	"To":{
+		"en":"To",
+		"da":""
+	},
+	"CC":{
+		"en":"CC",
+		"da":""
+	},
+    "Sent":{
+		"en":"Sent",
+		"da":"Sent"
+	},
+    "Received":{
+		"en":"Received",
+		"da":"Received"
+	}
+}

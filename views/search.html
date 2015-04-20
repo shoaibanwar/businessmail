@@ -1,0 +1,168 @@
+<div data-role="view" id="search" data-title="Search" data-layout="layout" data-bind="events: { init: onViewInit, show: onViewShow }" data-model="FK.search.model" data-use-native-scrolling="true">
+	<form>
+		<ul data-role="listview" class="fullWidthInputs">
+            <li style="text-align: center">
+				<button data-role="button" data-bind="events: {click: actions.send}" class="stretchToWidth">Search</button>
+			</li>
+			<li class="toFromWrapper autoWidth">
+				<label>
+                    Select BU to search:
+					<button data-role="button" data-rel="modalview" href="#modalView-buPaths" data-icon="organize"></button>
+					<input class="class70" id="search_input" type="search" required="required" data-bind="value: observable.bUPaths" disabled="disabled">
+                    
+				</label>
+			</li>
+			<li>
+                <label>Search subject for words:</label>
+				<input type="search" class="class70"  data-bind="value: observable.subjectField">
+			</li>
+			<li>
+                <label>Full text search:</label>
+				<input type="search" class="class70" data-bind="value: observable.fullText">
+			</li>
+			<li class="toFromWrapper autoWidth">
+				<label>
+                    From:
+					<button data-role="button" data-rel="modalview" href="#modalView-search_fromList" data-icon="contacts"></button>
+					<input class="class80" type="text" id="fromField" data-bind="value: observable.fromField">
+				</label>
+			</li>
+			<li class="toFromWrapper autoWidth">
+				<label>
+                    To:
+					<button data-role="button" data-rel="modalview" href="#modalView-search_toList"  data-icon="contacts"></button>
+					<input type="text" class="class80" id="toField" data-bind="value: observable.toField">
+				</label>
+			</li>
+			<li class="toFromWrapper autoWidth">
+				<label>
+                    Keywords:
+					<button data-role="button" data-rel="modalview" href="#modalView-search_keywords" data-icon="bookmarks"></button>
+					<input id="keywords" type="search" class="class70" data-bind="value: observable.keywords" >
+				</label>
+			</li>
+			<li class="toFromWrapper autoWidth">
+				<label>
+                    Except:
+					<button data-role="button" data-rel="modalview" href="#modalView-search_notKeywords" data-icon="bookmarks"></button>
+					<input id="notKeywords" type="search" class="class70" data-bind="value: observable.notKeywords" >
+				</label>
+
+			</li>
+			
+
+			<li>
+                <label>REFN:</label>
+				<input type="text" class="class80" data-bind="value: observable.rEFN">
+			</li>
+			<li>
+                <label>BREF:</label>
+				<input type="text" class="class80" data-bind="value: observable.bREF">
+
+			</li>
+
+			<li style="text-align: right">
+				Date from: <span class="km-widget km-button"><input type="date" name="date" step="7" min="2014-09-08" data-bind="value: observable.fromRecvDate" /></span>
+			</li>
+
+			<li style="text-align: right">
+				Date to: <span class="km-widget km-button"><input type="date" name="date" step="7" min="2014-09-08" data-bind="value: observable.toRecvDate" /></span>
+			</li>
+
+			<li style="text-align: center">
+				<button data-role="button" data-bind="events: {click: actions.send}" class="stretchToWidth">Search</button>
+			</li>
+		</ul>
+
+
+		
+	<!--<button data-role="button" data-bind="click: actions.stopSearch, visible: searchStopBtn_isVisible"><span class="fa fa-stop"><span data-text="Stop"></span></span></button>-->
+		
+
+
+	</form>
+
+	<footer data-role="footer">
+		<div data-role="tabstrip">
+			<a data-role="button" data-icon="home" href='views/home.html'>Views</a>
+			<a data-role="button" data-icon="compose" href="views/create.html">Create</a>
+			<a data-role="button" data-icon="search" href="views/search.html">Search</a>
+		</div>
+	</footer>
+	<div id="modalView-buPaths" data-role="modalview" style="width:90%"  data-modal="true">
+		<ul id="search_buPath" data-role="listview" data-style="inset" data-bind="source: buPathData" data-template="checkboxList-template"></ul>
+		<button data-role="button" data-bind="click: buPath_onSelect">Select</button>
+        <button data-role="button" data-bind="click: buPath_onCancel">Cancel</button>
+	</div>
+	<div id="modalView-search_toList" data-role="modalview" style="width:90%"  data-modal="true">
+		<ul data-role="listview" data-style="inset" data-bind="source: accounts" data-template="checkboxList_person-template"></ul>
+		<button data-role="button" data-bind="click: to_onSelect">Select</button>
+        <button data-role="button" data-bind="click: to_onCancel">Cancel</button>
+	</div>
+	<div id="modalView-search_fromList" data-role="modalview" style="width:90%"  data-modal="true">
+		<ul data-role="listview" data-style="inset" data-bind="source: accounts" data-template="checkboxList_person-template"></ul>
+		<button data-role="button" data-bind="click: from_onSelect">Select</button>
+        <button data-role="button" data-bind="click: from_onCancel">Cancel</button>
+	</div>
+	<div id="modalView-search_keywords" data-role="modalview" style="width:90%"  data-modal="true">
+		<ul data-role="listview" data-style="inset" data-bind="source: keywords" data-template="checkboxList-template"></ul>
+		<button data-role="button" data-bind="click: keywords_onSelect">Select</button>
+        <button data-role="button" data-bind="click: keywords_onCancel">Cancel</button>
+	</div>
+	<div id="modalView-search_notKeywords" data-role="modalview" style="width:90%"  data-modal="true">
+		<ul data-role="listview" data-style="inset" data-bind="source: keywords" data-template="checkboxList-template"></ul>
+		<button data-role="button" data-bind="click: notKeywords_onSelect">Select</button>
+        <button data-role="button" data-bind="click: notKeywords_onCancel">Cancel</button>
+	</div>
+</div>
+
+
+<div data-role="modalview" id="modalview-datePicker" style="width: 90%;" data-modal="false">
+  	<div data-role="header">
+        <div data-role="navbar">
+            <a data-click="closeModalView" data-role="button" data-align="right">Cancel</a>
+        </div>
+    </div>
+	<div data-role="datepicker"></div>
+</div>
+
+
+
+<script type="text/x-kendo-template" id="checkboxList-template">
+	 <label>
+		<input type="checkbox" name="#: name #" />
+		#: name #
+	</label>
+</script>
+<script type="text/x-kendo-template" id="checkboxList_person-template">
+	<label>
+		<input type="checkbox" name="#: address #" />
+		#: name #
+	</label>
+</script>
+<script type="text/x-kendo-template" id="radioList_person-template">
+	<label>
+		<input type="radio" name="address" data-address="#: address #" />
+		#: name #
+	</label>
+</script>
+<script type="text/x-kendo-template" id="search_buPath-template">
+	<span class="km-widget" >#: data #</span>
+</script>
+
+		
+
+		
+<script type="text/x-kendo-template" id="sender-template">
+	#: display # <span>&lt;#: email #&gt;</span>
+</script>
+
+<script id="to-template" type="text/x-kendo-template">
+	<dl class="person">
+		<dt><span class="sender_name" data-bind="text: name"></span></dt>
+		<dd><span class="sender_address" data-bind="text: address"></span></dd>
+	</dl>
+</script>
+<script type="text/x-kendo-template" id="keywords-template">
+	#: name #
+</script>

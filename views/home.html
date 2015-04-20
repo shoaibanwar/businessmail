@@ -1,0 +1,21 @@
+<div data-role="view" id="home" data-model="FK.home.model" data-bind="events: { init: onViewInit, show: onViewShow }" data-use-native-scrolling="true">
+	<header data-role="header">
+		<div data-role="navbar">
+			<span data-role="view-title">BUSINESSMAIL</span>
+			<a data-role='button' data-bind="events: {click: logout}" data-align="right"><i class="fa fa-power-off"></i></a>
+		</div>
+	</header>
+	<ul id="home_views" data-template="home_views-template" data-role="listview" data-bind="source: DS"></ul>
+	<script type="text/x-kendo-template" id="home_views-template">
+		# var queryStringParams = FK.home.createInboxParams(data.filters); #
+		<h2 data-bind="events: {click: actions.showView}" data-href="views/inbox.html${queryStringParams}" data-view="${name}">${name}</h2>
+	</script>
+	<!--<a href="views/inbox.html${queryStringParams}">${name}</a>-->
+	<footer data-role="footer">
+		<div data-role="tabstrip">
+			<a data-role="button" data-icon="home">Views</a>
+			<a data-role="button" data-icon="compose" href="views/create.html">Create</a>
+			<a data-role="button" data-icon="search" href="views/search.html">Search</a>
+		</div>
+	</footer>
+</div>

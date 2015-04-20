@@ -1,0 +1,49 @@
+<div data-role="view" data-layout="layout" data-model="FK.searchlist.model" data-bind="events: { init: onViewInit, show: onViewShow }">
+	<header data-role="header">
+		<div data-role="navbar">
+			<a data-align="left" data-icon="arrow-w" data-role="backbutton" class="back-button"></a>
+			<span data-role="view-title" data-bind="text: observable.viewTitle"></span>
+			<span data-align="right" id="mailCount"><span data-bind="text: observable.mailCount"></span> <span data-text="mails"></span></span>
+		</div>
+	</header>
+	<!--<ul id="remoteListView" data-source="FK.searchlist.DS" data-role="listview" data-template="searchlist_mailList-template" data-endless-scroll="true"></ul>-->
+	<!--<ul data-role="listview" data-source="FK.searchlist.DS" data-filterable="true" data-auto-bind="false" data-endless-scroll="true" data-pull-to-refresh="true" data-append-on-refresh="true" data-template="searchlist_mailList-template"></ul>-->
+	<ul class="mailList" id="searchlist_mailList"></ul>
+	<ul id="actionsheet" data-role="actionsheet" data-editable="false">
+		<li><a data-text="Reply all"></a></li>
+	</ul>
+	<footer data-role="footer">
+        <div data-role="tabstrip">
+            <a data-role="button" data-icon="home" href='views/home.html'>Views</a>
+            <a data-role="button" data-icon="compose" href="views/create.html">Create</a>
+            <a data-role="button" data-icon="search" href="views/search.html">Search</a>
+        </div>
+    </footer>
+</div>
+<script type="text/x-kendo-template" id="searchlist_mailList-template">
+<h2>
+	${FromField}
+	<p>
+		# var recvDate = moment(RecvDate); #
+		# var today = moment(new Date()); #
+		# if (recvDate.isSame(today, 'day')) { #
+		#= recvDate.format('HH:mm') #
+		# } else if(recvDate.isoWeek() == today.isoWeek()){ #
+		#= recvDate.format("ddd, hA") #
+        # }else { #
+        #= recvDate.format("YYYY MM DD hh:mm") #
+		# } #
+	</p>
+</h2>
+
+<h3>
+   
+	<span class="fa" data-attachments="${Attachments}"></span> ${SubjectField} &nbsp;
+	<p><small>${BREF}</small></p>
+</h3>
+<h4>
+	# var keywordsArray = keywords.split(';'); #
+	#= "<mark>" + keywordsArray.join("</mark><mark>") + "</mark>" #
+&nbsp;<p><small>${REFN}</small></p>
+</h4>
+</script>

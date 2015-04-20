@@ -1,0 +1,29 @@
+		<div data-role="view" id="login" data-title="Login" data-bind="events: { init: onViewInit, show: onViewShow }" data-model="FK.login.model" data-use-native-scrolling="false" data-ready-to-send="true">
+		<h1><img src="assets/img/0-logo.png" /></h1>
+		<h2>Businessmail</h2>
+
+		<form id="loginForm">
+			<ul data-role="listview" class="fullWidthInputs">
+				<li>
+                    <!--
+					<input type="email" id="email" data-bind="value: observable.email" placeholder="Email" required validationMessage="Email Field Invalid" />
+                    -->
+                    <input type="email" id="email" data-bind="value: observable.email" placeholder="Email" />
+				<li>
+					<input type="password" id="password" data-bind="value: observable.password" placeholder="Password" />
+				</li>
+	            <li>
+	                <label>
+		                Remember Me &nbsp;
+		                &nbsp; <input type="checkbox" id="remember" data-bind="checked: observable.remember" />
+	                </label>
+				</li>
+				<li>
+					<button data-role="button" data-bind="events: {click: verify}">Login</button>
+				</li>
+			</ul>
+		</form>
+		<footer data-role="footer">
+			<small data-bind="text: observable.version" style="text-align:right; display: block; padding:4px 20px"></small>
+		</footer>
+	</div>
